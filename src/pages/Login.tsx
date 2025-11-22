@@ -113,17 +113,17 @@ export default function Login() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-        className="w-full max-w-md relative"
+        className="w-full max-w-md relative px-4"
       >
         {/* Logo and branding */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-center mb-6 sm:mb-8"
+          className="text-center mb-8 sm:mb-10"
         >
           <motion.div
-            className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-3xl bg-zinc-900 border border-zinc-800 mb-4 sm:mb-6 shadow-2xl shadow-black/50"
+            className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-zinc-900 border border-zinc-800 mb-6 sm:mb-8 shadow-2xl shadow-black/50"
             whileHover={{ scale: 1.05, rotate: 5 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -131,17 +131,17 @@ export default function Login() {
               animate={{ rotate: [0, 5, -5, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
             >
-              <Palette className="w-8 h-8 sm:w-10 sm:h-10 text-zinc-400" />
+              <Palette className="w-10 h-10 sm:w-12 sm:h-12 text-zinc-400" />
             </motion.div>
           </motion.div>
           <motion.h1
-            className="text-3xl sm:text-4xl font-semibold text-white mb-2 tracking-tight"
+            className="text-4xl sm:text-5xl font-semibold text-white mb-3 tracking-tight"
             animate={{ opacity: [0.9, 1, 0.9] }}
             transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
           >
             Cindie
           </motion.h1>
-          <p className="text-zinc-500 text-sm font-medium">
+          <p className="text-zinc-400 text-sm sm:text-base font-medium">
             Creative Business Toolkit
           </p>
         </motion.div>
@@ -152,16 +152,16 @@ export default function Login() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
           whileHover={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.9)' }}
-          className="bg-zinc-950 backdrop-blur-2xl border border-zinc-800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl shadow-black/80"
+          className="bg-zinc-950 backdrop-blur-2xl border border-zinc-800/50 rounded-2xl sm:rounded-3xl p-8 sm:p-10 shadow-2xl shadow-black/80"
         >
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-5">
             {/* Username field */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.4 }}
             >
-              <label className="block text-sm font-medium text-zinc-400 mb-2">
+              <label className="block text-sm font-medium text-zinc-400 mb-3">
                 Username
               </label>
               <div className="relative group">
@@ -176,7 +176,7 @@ export default function Login() {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   whileFocus={{ scale: 1.01 }}
-                  className="w-full bg-black border border-zinc-800 rounded-xl sm:rounded-2xl pl-12 pr-4 py-3 sm:py-3.5 text-sm sm:text-base text-white placeholder:text-zinc-700 focus:border-zinc-600 focus:ring-2 focus:ring-zinc-800 focus:outline-none transition-all duration-300 hover:border-zinc-700"
+                  className="w-full bg-black border border-zinc-800 rounded-xl sm:rounded-2xl pl-12 pr-4 py-3.5 sm:py-4 text-sm sm:text-base text-white placeholder:text-zinc-700 focus:border-zinc-600 focus:ring-2 focus:ring-zinc-800 focus:outline-none transition-all duration-300 hover:border-zinc-700"
                   placeholder="Enter your username"
                   required
                 />
@@ -189,7 +189,7 @@ export default function Login() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5, duration: 0.4 }}
             >
-              <label className="block text-sm font-medium text-zinc-400 mb-2">
+              <label className="block text-sm font-medium text-zinc-400 mb-3">
                 Password
               </label>
               <div className="relative group">
@@ -204,7 +204,7 @@ export default function Login() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   whileFocus={{ scale: 1.01 }}
-                  className="w-full bg-black border border-zinc-800 rounded-xl sm:rounded-2xl pl-12 pr-12 py-3 sm:py-3.5 text-sm sm:text-base text-white placeholder:text-zinc-700 focus:border-zinc-600 focus:ring-2 focus:ring-zinc-800 focus:outline-none transition-all duration-300 hover:border-zinc-700"
+                  className="w-full bg-black border border-zinc-800 rounded-xl sm:rounded-2xl pl-12 pr-12 py-3.5 sm:py-4 text-sm sm:text-base text-white placeholder:text-zinc-700 focus:border-zinc-600 focus:ring-2 focus:ring-zinc-800 focus:outline-none transition-all duration-300 hover:border-zinc-700"
                   placeholder="Enter your password"
                   required
                 />
@@ -244,7 +244,7 @@ export default function Login() {
               transition={{ delay: 0.6, duration: 0.4 }}
               whileHover={{ scale: 1.02, boxShadow: '0 20px 50px rgba(255, 255, 255, 0.15)' }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-white text-black font-medium py-3 sm:py-3.5 rounded-xl sm:rounded-2xl shadow-lg shadow-black/50 hover:bg-zinc-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 relative overflow-hidden group"
+              className="w-full bg-white text-black font-semibold py-3.5 sm:py-4 rounded-xl sm:rounded-2xl shadow-lg shadow-black/50 hover:bg-zinc-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 relative overflow-hidden group text-base sm:text-lg mt-6"
             >
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
@@ -269,7 +269,7 @@ export default function Login() {
           </form>
 
           {/* Footer text */}
-          <p className="text-center text-zinc-600 text-xs mt-6">
+          <p className="text-center text-zinc-600 text-xs sm:text-sm mt-8">
             Welcome back to the dark side
           </p>
         </motion.div>
@@ -279,7 +279,7 @@ export default function Login() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
-          className="text-center mt-8 text-zinc-700 text-xs"
+          className="text-center mt-6 sm:mt-8 text-zinc-700 text-xs"
         >
           Crafted with darkness and elegance
         </motion.div>
