@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
   LayoutDashboard,
@@ -11,6 +11,7 @@ import {
   DollarSign,
   Menu,
   X,
+  LogOut,
 } from 'lucide-react'
 import { useStore } from '@/store/useStore'
 
@@ -26,7 +27,13 @@ const navItems = [
 ]
 
 export default function Sidebar() {
-  const { sidebarOpen, setSidebarOpen } = useStore()
+  const { sidebarOpen, setSidebarOpen, logout, username } = useStore()
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    logout()
+    navigate('/login')
+  }
 
   return (
     <>
@@ -94,7 +101,31 @@ export default function Sidebar() {
         </nav>
 
         {/* Footer */}
-        <div className="p-6 border-t border-gray-200">
+        <div className="p-6 border-t border-gray-200 space-y-3">
+          {/* User info and logout */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+                <span className="text-xs font-semibold text-white">
+                  {username?.charAt(0).toUpperCase()}
+                </span>
+              </div>
+              <div>
+                <p className="text-sm font-medium text-gray-800">{username}</p>
+                <p className="text-xs text-gray-500">Creative</p>
+              </div>
+            </div>
+            <motion.button
+              onClick={handleLogout}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors group"
+              title="Logout"
+            >
+              <LogOut className="w-4 h-4 text-gray-500 group-hover:text-red-600 transition-colors" />
+            </motion.button>
+          </div>
+
           <div className="bg-gray-50 rounded-xl p-4">
             <p className="text-sm font-medium text-gray-800 mb-1">
               Need help?
