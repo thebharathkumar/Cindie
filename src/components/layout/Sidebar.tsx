@@ -54,8 +54,18 @@ export default function Sidebar() {
         animate={{
           x: sidebarOpen ? 0 : -280,
         }}
+        drag="x"
+        dragConstraints={{ left: -280, right: 0 }}
+        dragElastic={0.2}
+        onDragEnd={(_, info) => {
+          if (info.offset.x < -50) {
+            setSidebarOpen(false)
+          } else if (info.offset.x > 50) {
+            setSidebarOpen(true)
+          }
+        }}
         transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-        className="fixed left-0 top-0 h-screen w-72 bg-zinc-950 border-r border-zinc-800 z-40 flex flex-col"
+        className="fixed left-0 top-0 h-screen w-72 bg-zinc-950 border-r border-zinc-800 shadow-2xl shadow-black/50 z-40 flex flex-col"
       >
         {/* Header */}
         <motion.div
@@ -155,13 +165,19 @@ export default function Sidebar() {
           </div>
 
           <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 cursor-pointer"
+            whileHover={{ scale: 1.02, borderColor: 'rgb(63 63 70)' }}
+            whileTap={{ scale: 0.98 }}
+            className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 cursor-pointer relative overflow-hidden group"
           >
-            <p className="text-sm font-medium text-white mb-1">
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-700/10 to-transparent"
+              animate={{ x: ['-100%', '100%'] }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'linear', repeatDelay: 2 }}
+            />
+            <p className="text-sm font-medium text-white mb-1 relative z-10">
               Need help?
             </p>
-            <p className="text-xs text-zinc-500">
+            <p className="text-xs text-zinc-500 relative z-10">
               Check out our guide to get started
             </p>
           </motion.div>
@@ -171,11 +187,19 @@ export default function Sidebar() {
       {/* Mobile menu button */}
       <motion.button
         onClick={() => setSidebarOpen(true)}
-        whileHover={{ scale: 1.05 }}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.2, duration: 0.4 }}
+        whileHover={{ scale: 1.05, rotate: 5 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed top-4 left-4 z-30 lg:hidden p-3 rounded-xl bg-zinc-950 border border-zinc-800 shadow-lg shadow-black/50"
+        className="fixed top-4 left-4 z-30 lg:hidden p-3 rounded-xl bg-zinc-950 border border-zinc-800 shadow-lg shadow-black/50 backdrop-blur-xl"
       >
-        <Menu className="w-6 h-6 text-zinc-400" />
+        <motion.div
+          animate={{ rotate: [0, 5, -5, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <Menu className="w-6 h-6 text-zinc-400" />
+        </motion.div>
       </motion.button>
     </>
   )
