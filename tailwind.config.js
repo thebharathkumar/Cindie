@@ -65,6 +65,12 @@ export default {
         semibold: '600',
         bold: '700',
       },
+      letterSpacing: {
+        tighter: '-0.03em',
+        tight: '-0.02em',
+        normal: '-0.01em',
+        wide: '0em',
+      },
       spacing: {
         '18': '4.5rem',
         '88': '22rem',
