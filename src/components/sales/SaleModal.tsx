@@ -228,10 +228,10 @@ export default function SaleModal({ isOpen, onClose, saleId }: Props) {
         {/* Price Breakdown */}
         {selectedProduct && (
           <div className="p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-200">
-            <h3 className="font-semibold text-slate-900 mb-3">Sale Summary</h3>
+            <h3 className="font-semibold text-gray-900 mb-3">Sale Summary</h3>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
-                <span className="text-slate-600">
+                <span className="text-gray-600">
                   Unit Price × {formData.quantity}:
                 </span>
                 <span className="font-medium">
@@ -242,11 +242,11 @@ export default function SaleModal({ isOpen, onClose, saleId }: Props) {
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-600">Tax ({(taxRate * 100).toFixed(1)}%):</span>
+                <span className="text-gray-600">Tax ({(taxRate * 100).toFixed(1)}%):</span>
                 <span className="font-medium">${(formData.taxAmount || 0).toFixed(2)}</span>
               </div>
               <div className="pt-2 border-t border-green-200 flex justify-between">
-                <span className="font-semibold text-slate-900">Total:</span>
+                <span className="font-semibold text-gray-900">Total:</span>
                 <span className="font-bold text-green-600 text-lg">
                   ${(formData.totalAmount || 0).toFixed(2)}
                 </span>

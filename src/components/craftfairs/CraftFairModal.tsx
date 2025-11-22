@@ -178,14 +178,14 @@ export default function CraftFairModal({ isOpen, onClose, fairId }: Props) {
 
         {/* Checklist */}
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-2">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
             Checklist
           </label>
           <div className="space-y-2">
             {formData.checklist?.map((item) => (
               <div
                 key={item.id}
-                className="flex items-center gap-2 p-3 bg-slate-50 rounded-lg"
+                className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg"
               >
                 <button
                   type="button"
@@ -193,14 +193,14 @@ export default function CraftFairModal({ isOpen, onClose, fairId }: Props) {
                   className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
                     item.completed
                       ? 'bg-green-600 border-green-600'
-                      : 'border-slate-300 hover:border-green-400'
+                      : 'border-gray-300 hover:border-green-400'
                   }`}
                 >
                   {item.completed && <Check className="w-3 h-3 text-white" />}
                 </button>
                 <span
                   className={`flex-1 ${
-                    item.completed ? 'line-through text-slate-500' : 'text-slate-900'
+                    item.completed ? 'line-through text-gray-500' : 'text-gray-900'
                   }`}
                 >
                   {item.text}

@@ -24,24 +24,24 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      'inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
+      'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed'
 
     const variants = {
       primary:
-        'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 focus:ring-blue-500 shadow-lg shadow-blue-500/30',
+        'bg-primary text-white hover:bg-primary-light active:bg-primary-dark shadow-sm',
       secondary:
-        'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 focus:ring-purple-500 shadow-lg shadow-purple-500/30',
+        'bg-gray-800 text-white hover:bg-gray-700 active:bg-gray-900 shadow-sm',
       outline:
-        'border-2 border-slate-300 text-slate-700 hover:border-slate-400 hover:bg-slate-50 focus:ring-slate-500',
-      ghost: 'text-slate-700 hover:bg-slate-100 focus:ring-slate-500',
+        'border-2 border-primary text-primary hover:bg-primary hover:text-white',
+      ghost: 'text-gray-700 hover:bg-gray-100',
       danger:
-        'bg-gradient-to-r from-red-600 to-rose-600 text-white hover:from-red-700 hover:to-rose-700 focus:ring-red-500 shadow-lg shadow-red-500/30',
+        'bg-red-600 text-white hover:bg-red-700 active:bg-red-800 shadow-sm',
     }
 
     const sizes = {
-      sm: 'text-sm px-3 py-1.5',
+      sm: 'text-sm px-4 py-2',
       md: 'text-base px-5 py-2.5',
-      lg: 'text-lg px-7 py-3.5',
+      lg: 'text-lg px-7 py-3',
     }
 
     const MotionButton = motion.button
@@ -49,8 +49,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <MotionButton
         ref={ref}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
+        whileHover={{ scale: 1.01 }}
+        whileTap={{ scale: 0.99 }}
         className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
         disabled={disabled || loading}
         {...(props as any)}

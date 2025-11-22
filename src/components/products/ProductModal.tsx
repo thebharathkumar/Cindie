@@ -149,17 +149,17 @@ export default function ProductModal({ isOpen, onClose, productId }: Props) {
 
         {/* Materials */}
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-2">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
             Materials & Costs
           </label>
           <div className="space-y-2 mb-3">
             {formData.materials?.map((material, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 p-3 bg-slate-50 rounded-lg"
+                className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg"
               >
-                <span className="flex-1 text-slate-900">{material.name}</span>
-                <span className="text-slate-600">${material.cost.toFixed(2)}</span>
+                <span className="flex-1 text-gray-900">{material.name}</span>
+                <span className="text-gray-600">${material.cost.toFixed(2)}</span>
                 <button
                   type="button"
                   onClick={() => removeMaterial(index)}
@@ -212,14 +212,14 @@ export default function ProductModal({ isOpen, onClose, productId }: Props) {
         />
 
         {/* Price Calculator */}
-        <div className="p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-200">
+        <div className="p-4 bg-gray-50 rounded-xl border border-blue-200">
           <div className="flex items-center gap-2 mb-3">
             <Calculator className="w-5 h-5 text-blue-600" />
-            <h3 className="font-semibold text-slate-900">Price Calculator</h3>
+            <h3 className="font-semibold text-gray-900">Price Calculator</h3>
           </div>
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
-              <span className="text-slate-600">Materials Cost:</span>
+              <span className="text-gray-600">Materials Cost:</span>
               <span className="font-medium">
                 $
                 {(formData.materials?.reduce((acc, m) => acc + m.cost, 0) || 0).toFixed(
@@ -228,17 +228,17 @@ export default function ProductModal({ isOpen, onClose, productId }: Props) {
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-600">Labor Cost ($15/hr):</span>
+              <span className="text-gray-600">Labor Cost ($15/hr):</span>
               <span className="font-medium">
                 ${((formData.timeSpent || 0) * 15).toFixed(2)}
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-600">Markup Factor:</span>
+              <span className="text-gray-600">Markup Factor:</span>
               <span className="font-medium">{markupFactor}x</span>
             </div>
             <div className="pt-2 border-t border-blue-200 flex justify-between">
-              <span className="font-semibold text-slate-900">Suggested Price:</span>
+              <span className="font-semibold text-gray-900">Suggested Price:</span>
               <span className="font-bold text-blue-600">
                 ${suggestedPrice.toFixed(2)}
               </span>

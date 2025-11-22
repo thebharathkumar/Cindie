@@ -58,10 +58,10 @@ export default function Sales() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-4xl font-bold text-slate-900 mb-2">
+        <h1 className="text-4xl font-bold text-gray-900 mb-2">
           Sales Tracker + POS 💳
         </h1>
-        <p className="text-lg text-slate-600">
+        <p className="text-lg text-gray-600">
           Track sales and manage transactions
         </p>
       </motion.div>
@@ -71,7 +71,7 @@ export default function Sales() {
         <Card variant="glass">
           <div className="flex items-center gap-3 mb-2">
             <DollarSign className="w-5 h-5 text-green-600" />
-            <p className="text-sm text-slate-600">Total Revenue</p>
+            <p className="text-sm text-gray-600">Total Revenue</p>
           </div>
           <p className="text-3xl font-bold text-green-600">${totalRevenue.toFixed(2)}</p>
         </Card>
@@ -79,7 +79,7 @@ export default function Sales() {
         <Card variant="glass">
           <div className="flex items-center gap-3 mb-2">
             <Calendar className="w-5 h-5 text-blue-600" />
-            <p className="text-sm text-slate-600">This Month</p>
+            <p className="text-sm text-gray-600">This Month</p>
           </div>
           <p className="text-3xl font-bold text-blue-600">${monthRevenue.toFixed(2)}</p>
         </Card>
@@ -87,7 +87,7 @@ export default function Sales() {
         <Card variant="glass">
           <div className="flex items-center gap-3 mb-2">
             <ShoppingCart className="w-5 h-5 text-purple-600" />
-            <p className="text-sm text-slate-600">Transactions</p>
+            <p className="text-sm text-gray-600">Transactions</p>
           </div>
           <p className="text-3xl font-bold text-purple-600">{totalTransactions}</p>
         </Card>
@@ -95,7 +95,7 @@ export default function Sales() {
         <Card variant="glass">
           <div className="flex items-center gap-3 mb-2">
             <TrendingUp className="w-5 h-5 text-orange-600" />
-            <p className="text-sm text-slate-600">Avg. Sale</p>
+            <p className="text-sm text-gray-600">Avg. Sale</p>
           </div>
           <p className="text-3xl font-bold text-orange-600">
             ${totalTransactions > 0 ? (totalRevenue / totalTransactions).toFixed(2) : '0.00'}
@@ -106,7 +106,7 @@ export default function Sales() {
       {/* Sales Chart */}
       {salesByProduct.length > 0 && (
         <Card>
-          <h2 className="text-xl font-semibold text-slate-900 mb-4">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">
             Sales by Product
           </h2>
           <ResponsiveContainer width="100%" height={300}>
@@ -146,7 +146,7 @@ export default function Sales() {
 
       {/* Sales List */}
       <Card>
-        <h2 className="text-xl font-semibold text-slate-900 mb-4">
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">
           Recent Transactions
         </h2>
         <SalesList sales={sales || []} onEdit={handleEdit} />

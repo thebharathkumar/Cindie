@@ -23,7 +23,7 @@ export default function ExpenseList({ expenses, onEdit }: Props) {
       packaging: 'from-orange-600 to-red-600',
       marketing: 'from-yellow-600 to-amber-600',
       shipping: 'from-cyan-600 to-blue-600',
-      other: 'from-slate-600 to-gray-600',
+      other: 'from-gray-600 to-gray-600',
     }
     return colors[category] || colors.other
   }
@@ -31,7 +31,7 @@ export default function ExpenseList({ expenses, onEdit }: Props) {
   if (expenses.length === 0) {
     return (
       <div className="text-center py-8">
-        <p className="text-slate-500">No expenses recorded yet</p>
+        <p className="text-gray-500">No expenses recorded yet</p>
       </div>
     )
   }
@@ -41,7 +41,7 @@ export default function ExpenseList({ expenses, onEdit }: Props) {
       {expenses.map((expense) => (
         <div
           key={expense.id}
-          className="p-4 rounded-xl border border-slate-200 hover:shadow-md transition-all"
+          className="p-4 rounded-xl border border-gray-200 hover:shadow-md transition-all"
         >
           <div className="flex items-start justify-between">
             <div className="flex-1">
@@ -53,14 +53,14 @@ export default function ExpenseList({ expenses, onEdit }: Props) {
                 >
                   {expense.category.replace('-', ' ')}
                 </div>
-                <h4 className="font-semibold text-slate-900">{expense.description}</h4>
+                <h4 className="font-semibold text-gray-900">{expense.description}</h4>
               </div>
-              <div className="flex items-center gap-2 text-sm text-slate-600">
+              <div className="flex items-center gap-2 text-sm text-gray-600">
                 <Calendar className="w-4 h-4" />
                 {format(new Date(expense.date), 'MMM d, yyyy')}
               </div>
               {expense.notes && (
-                <p className="text-sm text-slate-500 mt-2 italic">{expense.notes}</p>
+                <p className="text-sm text-gray-500 mt-2 italic">{expense.notes}</p>
               )}
             </div>
             <div className="flex items-center gap-3 ml-4">

@@ -41,10 +41,10 @@ export default function Products() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-4xl font-bold text-slate-900 mb-2">
+        <h1 className="text-4xl font-bold text-gray-900 mb-2">
           Product & Inventory Manager 📦
         </h1>
-        <p className="text-lg text-slate-600">
+        <p className="text-lg text-gray-600">
           Track journals, candles, cards, prints, stickers, and more
         </p>
       </motion.div>
@@ -54,15 +54,15 @@ export default function Products() {
         <Card variant="glass">
           <div className="flex items-center gap-3 mb-2">
             <Package className="w-5 h-5 text-blue-600" />
-            <p className="text-sm text-slate-600">Total Inventory</p>
+            <p className="text-sm text-gray-600">Total Inventory</p>
           </div>
-          <p className="text-3xl font-bold text-slate-900">{totalInventory}</p>
+          <p className="text-3xl font-bold text-gray-900">{totalInventory}</p>
         </Card>
 
         <Card variant="glass">
           <div className="flex items-center gap-3 mb-2">
             <TrendingUp className="w-5 h-5 text-green-600" />
-            <p className="text-sm text-slate-600">Total Revenue</p>
+            <p className="text-sm text-gray-600">Total Revenue</p>
           </div>
           <p className="text-3xl font-bold text-green-600">${totalRevenue.toFixed(2)}</p>
         </Card>
@@ -70,7 +70,7 @@ export default function Products() {
         <Card variant="glass">
           <div className="flex items-center gap-3 mb-2">
             <AlertCircle className="w-5 h-5 text-orange-600" />
-            <p className="text-sm text-slate-600">Low Stock Items</p>
+            <p className="text-sm text-gray-600">Low Stock Items</p>
           </div>
           <p className="text-3xl font-bold text-orange-600">{lowStockCount}</p>
         </Card>
@@ -78,9 +78,9 @@ export default function Products() {
         <Card variant="glass">
           <div className="flex items-center gap-3 mb-2">
             <TrendingUp className="w-5 h-5 text-purple-600" />
-            <p className="text-sm text-slate-600">Best Seller</p>
+            <p className="text-sm text-gray-600">Best Seller</p>
           </div>
-          <p className="text-lg font-semibold text-slate-900 truncate">
+          <p className="text-lg font-semibold text-gray-900 truncate">
             {bestSeller?.name || 'N/A'}
           </p>
         </Card>

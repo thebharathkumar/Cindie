@@ -37,27 +37,27 @@ export default function CommissionCalendar({ commissions, onEdit }: Props) {
     <div>
       {/* Calendar Header */}
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-semibold text-slate-900">
+        <h2 className="text-2xl font-semibold text-gray-900">
           {format(currentMonth, 'MMMM yyyy')}
         </h2>
         <div className="flex gap-2">
           <button
             onClick={() => setCurrentMonth(subMonths(currentMonth, 1))}
-            className="p-2 rounded-lg hover:bg-slate-100 transition-colors"
+            className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
-            <ChevronLeft className="w-5 h-5 text-slate-600" />
+            <ChevronLeft className="w-5 h-5 text-gray-600" />
           </button>
           <button
             onClick={() => setCurrentMonth(new Date())}
-            className="px-4 py-2 rounded-lg hover:bg-slate-100 transition-colors text-sm font-medium text-slate-600"
+            className="px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium text-gray-600"
           >
             Today
           </button>
           <button
             onClick={() => setCurrentMonth(addMonths(currentMonth, 1))}
-            className="p-2 rounded-lg hover:bg-slate-100 transition-colors"
+            className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
-            <ChevronRight className="w-5 h-5 text-slate-600" />
+            <ChevronRight className="w-5 h-5 text-gray-600" />
           </button>
         </div>
       </div>
@@ -68,7 +68,7 @@ export default function CommissionCalendar({ commissions, onEdit }: Props) {
         {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
           <div
             key={day}
-            className="text-center text-sm font-semibold text-slate-600 py-2"
+            className="text-center text-sm font-semibold text-gray-600 py-2"
           >
             {day}
           </div>
@@ -85,13 +85,13 @@ export default function CommissionCalendar({ commissions, onEdit }: Props) {
               key={index}
               className={`min-h-24 p-2 rounded-xl border transition-all ${
                 isCurrentMonth
-                  ? 'bg-white border-slate-200'
-                  : 'bg-slate-50 border-slate-100'
+                  ? 'bg-white border-gray-200'
+                  : 'bg-gray-50 border-gray-100'
               } ${isToday ? 'ring-2 ring-blue-500' : ''}`}
             >
               <div
                 className={`text-sm font-medium mb-1 ${
-                  isCurrentMonth ? 'text-slate-900' : 'text-slate-400'
+                  isCurrentMonth ? 'text-gray-900' : 'text-gray-400'
                 } ${isToday ? 'text-blue-600' : ''}`}
               >
                 {format(day, 'd')}
@@ -103,10 +103,10 @@ export default function CommissionCalendar({ commissions, onEdit }: Props) {
                     onClick={() => onEdit(commission.id!)}
                     className="w-full text-left p-1.5 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 transition-colors"
                   >
-                    <p className="text-xs font-medium text-slate-900 truncate">
+                    <p className="text-xs font-medium text-gray-900 truncate">
                       {commission.clientName}
                     </p>
-                    <p className="text-xs text-slate-600 truncate">
+                    <p className="text-xs text-gray-600 truncate">
                       ${commission.price}
                     </p>
                   </button>

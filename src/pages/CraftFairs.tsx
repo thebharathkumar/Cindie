@@ -45,10 +45,10 @@ export default function CraftFairs() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-4xl font-bold text-slate-900 mb-2">
+        <h1 className="text-4xl font-bold text-gray-900 mb-2">
           Craft Fair & Market Dashboard 🎪
         </h1>
-        <p className="text-lg text-slate-600">
+        <p className="text-lg text-gray-600">
           Stay organized and prepared for your events
         </p>
       </motion.div>
@@ -56,15 +56,15 @@ export default function CraftFairs() {
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card variant="glass">
-          <p className="text-sm text-slate-600 mb-1">Upcoming Fairs</p>
+          <p className="text-sm text-gray-600 mb-1">Upcoming Fairs</p>
           <p className="text-3xl font-bold text-blue-600">{upcomingFairs.length}</p>
         </Card>
         <Card variant="glass">
-          <p className="text-sm text-slate-600 mb-1">Past Events</p>
-          <p className="text-3xl font-bold text-slate-600">{pastFairs.length}</p>
+          <p className="text-sm text-gray-600 mb-1">Past Events</p>
+          <p className="text-3xl font-bold text-gray-600">{pastFairs.length}</p>
         </Card>
         <Card variant="glass">
-          <p className="text-sm text-slate-600 mb-1">Total Investment</p>
+          <p className="text-sm text-gray-600 mb-1">Total Investment</p>
           <p className="text-3xl font-bold text-green-600">
             ${fairs?.reduce((acc, f) => acc + f.boothFee, 0).toFixed(2) || '0.00'}
           </p>
@@ -84,7 +84,7 @@ export default function CraftFairs() {
       {/* Upcoming Fairs */}
       {upcomingFairs.length > 0 && (
         <div>
-          <h2 className="text-2xl font-semibold text-slate-900 mb-4">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             Upcoming Events
           </h2>
           <div className="grid grid-cols-1 gap-4">
@@ -93,14 +93,14 @@ export default function CraftFairs() {
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-xl font-semibold text-slate-900">
+                      <h3 className="text-xl font-semibold text-gray-900">
                         {fair.eventName}
                       </h3>
                       {isBefore(new Date(fair.eventDate), addDays(new Date(), 7)) && (
                         <Badge variant="warning">Coming Soon</Badge>
                       )}
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm text-slate-600">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm text-gray-600">
                       <div className="flex items-center gap-2">
                         <Calendar className="w-4 h-4" />
                         {format(new Date(fair.eventDate), 'MMM d, yyyy')}
@@ -115,17 +115,17 @@ export default function CraftFairs() {
                       </div>
                     </div>
                     {fair.notes && (
-                      <p className="text-sm text-slate-500 mt-2 italic">{fair.notes}</p>
+                      <p className="text-sm text-gray-500 mt-2 italic">{fair.notes}</p>
                     )}
                     {fair.checklist && fair.checklist.length > 0 && (
                       <div className="mt-4">
-                        <p className="text-sm font-medium text-slate-700 mb-2">
+                        <p className="text-sm font-medium text-gray-700 mb-2">
                           Checklist ({fair.checklist.filter((i) => i.completed).length}/
                           {fair.checklist.length} completed)
                         </p>
-                        <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                        <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
                           <div
-                            className="h-full bg-gradient-to-r from-green-600 to-emerald-600 rounded-full"
+                            className="h-full bg-gradient-to-r green-600 rounded-full"
                             style={{
                               width: `${
                                 (fair.checklist.filter((i) => i.completed).length /
@@ -162,7 +162,7 @@ export default function CraftFairs() {
       {/* Past Fairs */}
       {pastFairs.length > 0 && (
         <div>
-          <h2 className="text-2xl font-semibold text-slate-900 mb-4">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             Past Events
           </h2>
           <div className="grid grid-cols-1 gap-4">
@@ -170,10 +170,10 @@ export default function CraftFairs() {
               <Card key={fair.id} className="opacity-75">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-slate-700 mb-1">
+                    <h3 className="text-lg font-semibold text-gray-700 mb-1">
                       {fair.eventName}
                     </h3>
-                    <div className="flex items-center gap-4 text-sm text-slate-500">
+                    <div className="flex items-center gap-4 text-sm text-gray-500">
                       <span>{format(new Date(fair.eventDate), 'MMM d, yyyy')}</span>
                       <span>{fair.location}</span>
                       <span>${fair.boothFee.toFixed(2)}</span>
@@ -196,9 +196,9 @@ export default function CraftFairs() {
       {!fairs || fairs.length === 0 && (
         <Card variant="gradient">
           <div className="text-center py-16">
-            <Calendar className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-            <p className="text-slate-500 text-lg">No craft fairs scheduled</p>
-            <p className="text-slate-400 mt-2 mb-6">
+            <Calendar className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+            <p className="text-gray-500 text-lg">No craft fairs scheduled</p>
+            <p className="text-gray-400 mt-2 mb-6">
               Add your first event to get started
             </p>
             <Button onClick={() => setIsModalOpen(true)}>

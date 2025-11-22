@@ -47,25 +47,25 @@ export default function Sidebar() {
         animate={{
           x: sidebarOpen ? 0 : -280,
         }}
-        transition={{ duration: 0.3, ease: 'easeInOut' }}
-        className="fixed left-0 top-0 h-screen w-72 glass border-r border-slate-200 z-40 flex flex-col"
+        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+        className="fixed left-0 top-0 h-screen w-72 glass border-r border-gray-200 z-40 flex flex-col"
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-slate-200">
+        <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center">
-              <Palette className="w-6 h-6 text-white" />
+            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+              <Palette className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold gradient-text">Cindie</h1>
-              <p className="text-xs text-slate-500">Creative Toolkit</p>
+              <h1 className="text-xl font-semibold text-gray-800">Cindie</h1>
+              <p className="text-xs text-gray-500">Creative Toolkit</p>
             </div>
           </div>
           <button
             onClick={() => setSidebarOpen(false)}
-            className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
-            <X className="w-5 h-5 text-slate-600" />
+            <X className="w-5 h-5 text-gray-600" />
           </button>
         </div>
 
@@ -78,25 +78,15 @@ export default function Sidebar() {
                   to={item.path}
                   end={item.path === '/'}
                   className={({ isActive }) =>
-                    `flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
+                    `flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all duration-200 ${
                       isActive
-                        ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/30'
-                        : 'text-slate-600 hover:bg-slate-100'
+                        ? 'bg-gray-100 text-primary font-medium'
+                        : 'text-gray-600 hover:bg-gray-50'
                     }`
                   }
                 >
-                  {({ isActive }) => (
-                    <>
-                      <item.icon className="w-5 h-5" />
-                      <span className="font-medium">{item.label}</span>
-                      {isActive && (
-                        <motion.div
-                          layoutId="activeNav"
-                          className="ml-auto w-2 h-2 rounded-full bg-white"
-                        />
-                      )}
-                    </>
-                  )}
+                  <item.icon className="w-5 h-5" />
+                  <span>{item.label}</span>
                 </NavLink>
               </li>
             ))}
@@ -104,12 +94,12 @@ export default function Sidebar() {
         </nav>
 
         {/* Footer */}
-        <div className="p-6 border-t border-slate-200">
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4">
-            <p className="text-sm font-medium text-slate-900 mb-1">
+        <div className="p-6 border-t border-gray-200">
+          <div className="bg-gray-50 rounded-xl p-4">
+            <p className="text-sm font-medium text-gray-800 mb-1">
               Need help?
             </p>
-            <p className="text-xs text-slate-600">
+            <p className="text-xs text-gray-500">
               Check out our guide to get started
             </p>
           </div>
@@ -119,9 +109,9 @@ export default function Sidebar() {
       {/* Mobile menu button */}
       <button
         onClick={() => setSidebarOpen(true)}
-        className="fixed top-4 left-4 z-30 lg:hidden p-3 rounded-xl glass shadow-lg"
+        className="fixed top-4 left-4 z-30 lg:hidden p-3 rounded-xl glass shadow"
       >
-        <Menu className="w-6 h-6 text-slate-600" />
+        <Menu className="w-6 h-6 text-gray-600" />
       </button>
     </>
   )

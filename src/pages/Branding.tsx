@@ -26,10 +26,10 @@ export default function Branding() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-4xl font-bold text-slate-900 mb-2">
+        <h1 className="text-4xl font-bold text-gray-900 mb-2">
           Branding Helper 🎨
         </h1>
-        <p className="text-lg text-slate-600">
+        <p className="text-lg text-gray-600">
           Keep your visual identity consistent across all products
         </p>
       </motion.div>
@@ -43,8 +43,8 @@ export default function Branding() {
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center gap-2 px-5 py-3 rounded-xl font-medium transition-all duration-200 ${
                 activeTab === tab.id
-                  ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/30'
-                  : 'text-slate-600 hover:bg-slate-100'
+                  ? 'bg-gradient-to-r primary text-white shadow-sm'
+                  : 'text-gray-600 hover:bg-gray-100'
               }`}
             >
               <tab.icon className="w-5 h-5" />

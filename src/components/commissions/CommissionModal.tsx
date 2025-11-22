@@ -241,7 +241,7 @@ export default function CommissionModal({ isOpen, onClose, commissionId }: Props
           onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
         />
 
-        <div className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl">
+        <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
           <input
             type="checkbox"
             id="portfolioSave"
@@ -249,9 +249,9 @@ export default function CommissionModal({ isOpen, onClose, commissionId }: Props
             onChange={(e) =>
               setFormData({ ...formData, portfolioSave: e.target.checked })
             }
-            className="w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+            className="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
           />
-          <label htmlFor="portfolioSave" className="text-sm text-slate-700">
+          <label htmlFor="portfolioSave" className="text-sm text-gray-700">
             Save to portfolio when completed
           </label>
         </div>

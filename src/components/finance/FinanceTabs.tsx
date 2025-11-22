@@ -31,7 +31,7 @@ export default function FinanceTabs() {
               className={`flex items-center gap-2 px-5 py-3 rounded-xl font-medium transition-all ${
                 activeTab === 'expenses'
                   ? 'bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-lg'
-                  : 'text-slate-600 hover:bg-slate-100'
+                  : 'text-gray-600 hover:bg-gray-100'
               }`}
             >
               <TrendingDown className="w-4 h-4" />
@@ -42,7 +42,7 @@ export default function FinanceTabs() {
               className={`flex items-center gap-2 px-5 py-3 rounded-xl font-medium transition-all ${
                 activeTab === 'income'
                   ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg'
-                  : 'text-slate-600 hover:bg-slate-100'
+                  : 'text-gray-600 hover:bg-gray-100'
               }`}
             >
               <TrendingUp className="w-4 h-4" />

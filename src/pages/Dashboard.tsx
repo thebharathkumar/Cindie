@@ -27,7 +27,7 @@ export default function Dashboard() {
       label: 'Active Commissions',
       value: commissions?.filter((c) => c.status === 'in-progress').length || 0,
       icon: Briefcase,
-      color: 'from-blue-600 to-indigo-600',
+      color: 'primary',
       link: '/commissions',
     },
     {
@@ -35,7 +35,7 @@ export default function Dashboard() {
       value:
         products?.reduce((acc, p) => acc + (p.quantityMade - p.quantitySold), 0) || 0,
       icon: Package,
-      color: 'from-purple-600 to-pink-600',
+      color: 'primary',
       link: '/products',
     },
     {
@@ -43,7 +43,7 @@ export default function Dashboard() {
       value:
         craftFairs?.filter((f) => isAfter(f.eventDate, new Date())).length || 0,
       icon: Calendar,
-      color: 'from-green-600 to-emerald-600',
+      color: 'green-600',
       link: '/craft-fairs',
     },
     {
@@ -54,7 +54,7 @@ export default function Dashboard() {
         return saleMonth === currentMonth
       }).reduce((acc, s) => acc + s.totalAmount, 0) || 0).toFixed(2)}`,
       icon: DollarSign,
-      color: 'from-orange-600 to-red-600',
+      color: 'orange-600',
       link: '/sales',
     },
   ]
@@ -111,10 +111,10 @@ export default function Dashboard() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-4xl font-bold text-slate-900 mb-2">
+        <h1 className="text-4xl font-bold text-gray-900 mb-2">
           Welcome back! ✨
         </h1>
-        <p className="text-lg text-slate-600">
+        <p className="text-lg text-gray-600">
           Here's what's happening with your creative business today
         </p>
       </motion.div>
@@ -136,8 +136,8 @@ export default function Dashboard() {
               >
                 <div className="flex items-start justify-between">
                   <div>
-                    <p className="text-sm text-slate-600 mb-2">{stat.label}</p>
-                    <p className="text-3xl font-bold text-slate-900">{stat.value}</p>
+                    <p className="text-sm text-gray-600 mb-2">{stat.label}</p>
+                    <p className="text-3xl font-bold text-gray-900">{stat.value}</p>
                   </div>
                   <div
                     className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center shadow-lg`}
@@ -145,7 +145,7 @@ export default function Dashboard() {
                     <stat.icon className="w-6 h-6 text-white" />
                   </div>
                 </div>
-                <div className="mt-4 flex items-center text-sm text-slate-600 group-hover:text-blue-600 transition-colors">
+                <div className="mt-4 flex items-center text-sm text-gray-600 group-hover:text-blue-600 transition-colors">
                   View details
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -163,7 +163,7 @@ export default function Dashboard() {
           transition={{ delay: 0.3 }}
         >
           <Card variant="gradient">
-            <h2 className="text-xl font-semibold text-slate-900 mb-4">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">
               Quick Actions
             </h2>
             <div className="grid grid-cols-2 gap-3">
@@ -214,25 +214,25 @@ export default function Dashboard() {
           transition={{ delay: 0.4 }}
         >
           <Card>
-            <h2 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
               <Calendar className="w-5 h-5" />
               Upcoming Deadlines
             </h2>
             {upcomingDeadlines.length === 0 ? (
-              <p className="text-slate-500 text-center py-8">
+              <p className="text-gray-500 text-center py-8">
                 No upcoming deadlines
               </p>
             ) : (
               <div className="space-y-3">
                 {upcomingDeadlines.map((deadline, index) => (
                   <Link key={index} to={deadline.link}>
-                    <div className="p-3 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer">
+                    <div className="p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer">
                       <div className="flex items-center justify-between">
                         <div>
-                          <p className="font-medium text-slate-900">
+                          <p className="font-medium text-gray-900">
                             {deadline.title}
                           </p>
-                          <p className="text-sm text-slate-600">
+                          <p className="text-sm text-gray-600">
                             {format(new Date(deadline.date), 'MMM d, yyyy')}
                           </p>
                         </div>
@@ -265,7 +265,7 @@ export default function Dashboard() {
           transition={{ delay: 0.5 }}
         >
           <Card variant="glass">
-            <h2 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
               <AlertCircle className="w-5 h-5 text-orange-600" />
               Low Stock Alert
             </h2>
@@ -275,8 +275,8 @@ export default function Dashboard() {
                   key={product.id}
                   className="p-4 rounded-xl bg-orange-50 border border-orange-200"
                 >
-                  <p className="font-medium text-slate-900">{product.name}</p>
-                  <p className="text-sm text-slate-600 mt-1">
+                  <p className="font-medium text-gray-900">{product.name}</p>
+                  <p className="text-sm text-gray-600 mt-1">
                     Only {product.quantityMade - product.quantitySold} left
                   </p>
                 </div>

@@ -39,8 +39,8 @@ export default function BrandFonts() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-semibold text-slate-900">Brand Fonts</h2>
-          <p className="text-slate-600 mt-1">
+          <h2 className="text-2xl font-semibold text-gray-900">Brand Fonts</h2>
+          <p className="text-gray-600 mt-1">
             Keep track of your approved fonts for labels and packaging
           </p>
         </div>
@@ -55,9 +55,9 @@ export default function BrandFonts() {
       {/* Fonts List */}
       {!fonts || fonts.length === 0 ? (
         <div className="text-center py-16">
-          <Type className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-          <p className="text-slate-500 text-lg">No brand fonts yet</p>
-          <p className="text-slate-400 mt-2">
+          <Type className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+          <p className="text-gray-500 text-lg">No brand fonts yet</p>
+          <p className="text-gray-400 mt-2">
             Add your first font to get started
           </p>
         </div>
@@ -66,15 +66,15 @@ export default function BrandFonts() {
           {fonts.map((font) => (
             <div
               key={font.id}
-              className="group p-6 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition-all duration-200"
+              className="group p-6 rounded-2xl border border-gray-200 bg-white hover:shadow-lg transition-all duration-200"
             >
               <div className="flex items-start justify-between">
                 <div className="flex-1">
-                  <h3 className="font-semibold text-slate-900 mb-1">
+                  <h3 className="font-semibold text-gray-900 mb-1">
                     {font.name}
                   </h3>
-                  <p className="text-sm text-slate-600 mb-4">
-                    Font Family: <code className="bg-slate-100 px-2 py-1 rounded">{font.fontFamily}</code>
+                  <p className="text-sm text-gray-600 mb-4">
+                    Font Family: <code className="bg-gray-100 px-2 py-1 rounded">{font.fontFamily}</code>
                   </p>
                   {font.url && (
                     <a
@@ -86,7 +86,7 @@ export default function BrandFonts() {
                       View Font Source →
                     </a>
                   )}
-                  <div className="mt-4 p-4 bg-slate-50 rounded-xl">
+                  <div className="mt-4 p-4 bg-gray-50 rounded-xl">
                     <p
                       className="text-2xl"
                       style={{ fontFamily: font.fontFamily }}
@@ -94,13 +94,13 @@ export default function BrandFonts() {
                       The quick brown fox jumps over the lazy dog
                     </p>
                     <p
-                      className="text-sm mt-2 text-slate-600"
+                      className="text-sm mt-2 text-gray-600"
                       style={{ fontFamily: font.fontFamily }}
                     >
                       ABCDEFGHIJKLMNOPQRSTUVWXYZ
                     </p>
                     <p
-                      className="text-sm text-slate-600"
+                      className="text-sm text-gray-600"
                       style={{ fontFamily: font.fontFamily }}
                     >
                       abcdefghijklmnopqrstuvwxyz 0123456789

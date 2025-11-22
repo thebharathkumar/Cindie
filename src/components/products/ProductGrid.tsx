@@ -32,9 +32,9 @@ export default function ProductGrid({ products, onEdit }: Props) {
     return (
       <Card variant="gradient">
         <div className="text-center py-16">
-          <Package className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-          <p className="text-slate-500 text-lg">No products yet</p>
-          <p className="text-slate-400 mt-2">Add your first product to get started</p>
+          <Package className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+          <p className="text-gray-500 text-lg">No products yet</p>
+          <p className="text-gray-400 mt-2">Add your first product to get started</p>
         </div>
       </Card>
     )
@@ -53,8 +53,8 @@ export default function ProductGrid({ products, onEdit }: Props) {
               <div className="flex items-center gap-2">
                 <span className="text-3xl">{getTypeIcon(product.type)}</span>
                 <div>
-                  <h3 className="font-semibold text-slate-900">{product.name}</h3>
-                  <p className="text-sm text-slate-500 capitalize">{product.type}</p>
+                  <h3 className="font-semibold text-gray-900">{product.name}</h3>
+                  <p className="text-sm text-gray-500 capitalize">{product.type}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -75,19 +75,19 @@ export default function ProductGrid({ products, onEdit }: Props) {
 
             <div className="space-y-2 mb-4">
               <div className="flex items-center justify-between text-sm">
-                <span className="text-slate-600">Price:</span>
-                <span className="font-semibold text-slate-900">
+                <span className="text-gray-600">Price:</span>
+                <span className="font-semibold text-gray-900">
                   ${product.retailPrice.toFixed(2)}
                 </span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-slate-600">In Stock:</span>
-                <span className={`font-semibold ${isLowStock ? 'text-orange-600' : 'text-slate-900'}`}>
+                <span className="text-gray-600">In Stock:</span>
+                <span className={`font-semibold ${isLowStock ? 'text-orange-600' : 'text-gray-900'}`}>
                   {remaining}
                 </span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-slate-600">Sold:</span>
+                <span className="text-gray-600">Sold:</span>
                 <span className="font-semibold text-green-600">{product.quantitySold}</span>
               </div>
             </div>
@@ -104,9 +104,9 @@ export default function ProductGrid({ products, onEdit }: Props) {
             </div>
 
             {/* Revenue */}
-            <div className="mt-4 pt-4 border-t border-slate-200">
+            <div className="mt-4 pt-4 border-t border-gray-200">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-slate-600">Total Revenue:</span>
+                <span className="text-sm text-gray-600">Total Revenue:</span>
                 <span className="font-semibold text-green-600">
                   ${(product.retailPrice * product.quantitySold).toFixed(2)}
                 </span>

@@ -28,10 +28,10 @@ export default function Templates() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-semibold text-slate-900">
+        <h2 className="text-2xl font-semibold text-gray-900">
           Automatic Template Generator
         </h2>
-        <p className="text-slate-600 mt-1">
+        <p className="text-gray-600 mt-1">
           Generate consistent templates using your brand colors and fonts
         </p>
       </div>
@@ -40,13 +40,13 @@ export default function Templates() {
         {templateTypes.map((template, index) => (
           <div
             key={index}
-            className="p-6 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition-all duration-200"
+            className="p-6 rounded-2xl border border-gray-200 bg-white hover:shadow-lg transition-all duration-200"
           >
             <div className="text-4xl mb-4">{template.icon}</div>
-            <h3 className="text-xl font-semibold text-slate-900 mb-2">
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
               {template.name}
             </h3>
-            <p className="text-slate-600 mb-4">{template.description}</p>
+            <p className="text-gray-600 mb-4">{template.description}</p>
             <Button variant="outline" icon={<FileText className="w-4 h-4" />}>
               Create Template
             </Button>
@@ -54,11 +54,11 @@ export default function Templates() {
         ))}
       </div>
 
-      <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200">
-        <h3 className="text-lg font-semibold text-slate-900 mb-2">
+      <div className="p-6 rounded-2xl bg-gray-50 border border-blue-200">
+        <h3 className="text-lg font-semibold text-gray-900 mb-2">
           Coming Soon: Advanced Template Editor
         </h3>
-        <p className="text-slate-600 mb-4">
+        <p className="text-gray-600 mb-4">
           We're working on a drag-and-drop template editor that will use your
           brand colors and fonts to create beautiful, consistent designs.
           Templates will be exportable as PDF or PNG for printing.

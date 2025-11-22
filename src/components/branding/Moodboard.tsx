@@ -52,8 +52,8 @@ export default function Moodboard() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-semibold text-slate-900">Moodboard</h2>
-          <p className="text-slate-600 mt-1">
+          <h2 className="text-2xl font-semibold text-gray-900">Moodboard</h2>
+          <p className="text-gray-600 mt-1">
             Keep inspiration for each product line
           </p>
         </div>
@@ -72,8 +72,8 @@ export default function Moodboard() {
             onClick={() => setSelectedProductLine('all')}
             className={`px-4 py-2 rounded-xl font-medium transition-all ${
               selectedProductLine === 'all'
-                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
-                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                ? 'bg-primary text-white'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}
           >
             All
@@ -84,8 +84,8 @@ export default function Moodboard() {
               onClick={() => setSelectedProductLine(line)}
               className={`px-4 py-2 rounded-xl font-medium transition-all ${
                 selectedProductLine === line
-                  ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  ? 'bg-primary text-white'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
               {line}
@@ -97,9 +97,9 @@ export default function Moodboard() {
       {/* Images Grid */}
       {!filteredImages || filteredImages.length === 0 ? (
         <div className="text-center py-16">
-          <ImageIcon className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-          <p className="text-slate-500 text-lg">No moodboard images yet</p>
-          <p className="text-slate-400 mt-2">
+          <ImageIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+          <p className="text-gray-500 text-lg">No moodboard images yet</p>
+          <p className="text-gray-400 mt-2">
             Add your first inspiration image
           </p>
         </div>
@@ -108,9 +108,9 @@ export default function Moodboard() {
           {filteredImages.map((image) => (
             <div
               key={image.id}
-              className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md hover:shadow-xl transition-all duration-200"
+              className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md hover:shadow-xl transition-all duration-200"
             >
-              <div className="aspect-square overflow-hidden bg-slate-100">
+              <div className="aspect-square overflow-hidden bg-gray-100">
                 <img
                   src={image.imageUrl}
                   alt={image.description || 'Moodboard image'}
@@ -134,7 +134,7 @@ export default function Moodboard() {
                   </button>
                 </div>
                 {image.description && (
-                  <p className="text-sm text-slate-600">{image.description}</p>
+                  <p className="text-sm text-gray-600">{image.description}</p>
                 )}
               </div>
             </div>
@@ -186,10 +186,10 @@ export default function Moodboard() {
 
           {imageUrl && (
             <div className="mt-4">
-              <label className="block text-sm font-medium text-slate-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 Preview
               </label>
-              <div className="aspect-video w-full overflow-hidden rounded-xl border border-slate-200">
+              <div className="aspect-video w-full overflow-hidden rounded-xl border border-gray-200">
                 <img
                   src={imageUrl}
                   alt="Preview"

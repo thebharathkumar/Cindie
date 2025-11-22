@@ -65,10 +65,10 @@ export default function Customers() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-4xl font-bold text-slate-900 mb-2">
+        <h1 className="text-4xl font-bold text-gray-900 mb-2">
           Customer Directory 👥
         </h1>
-        <p className="text-lg text-slate-600">
+        <p className="text-lg text-gray-600">
           Build and manage your customer relationships
         </p>
       </motion.div>
@@ -78,7 +78,7 @@ export default function Customers() {
         <Card variant="glass">
           <div className="flex items-center gap-3 mb-2">
             <Users className="w-5 h-5 text-blue-600" />
-            <p className="text-sm text-slate-600">Total Customers</p>
+            <p className="text-sm text-gray-600">Total Customers</p>
           </div>
           <p className="text-3xl font-bold text-blue-600">{customers?.length || 0}</p>
         </Card>
@@ -86,7 +86,7 @@ export default function Customers() {
         <Card variant="glass">
           <div className="flex items-center gap-3 mb-2">
             <Mail className="w-5 h-5 text-green-600" />
-            <p className="text-sm text-slate-600">Email Subscribers</p>
+            <p className="text-sm text-gray-600">Email Subscribers</p>
           </div>
           <p className="text-3xl font-bold text-green-600">
             {customers?.filter((c) => c.email).length || 0}
@@ -96,7 +96,7 @@ export default function Customers() {
         <Card variant="glass">
           <div className="flex items-center gap-3 mb-2">
             <Phone className="w-5 h-5 text-purple-600" />
-            <p className="text-sm text-slate-600">With Phone Numbers</p>
+            <p className="text-sm text-gray-600">With Phone Numbers</p>
           </div>
           <p className="text-3xl font-bold text-purple-600">
             {customers?.filter((c) => c.phone).length || 0}
@@ -111,7 +111,7 @@ export default function Customers() {
           placeholder="Search customers..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="flex-1 px-4 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none"
+          className="flex-1 px-4 py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-primary/20 focus:outline-none"
         />
         <Button
           variant="outline"
@@ -132,9 +132,9 @@ export default function Customers() {
       {!filteredCustomers || filteredCustomers.length === 0 ? (
         <Card variant="gradient">
           <div className="text-center py-16">
-            <Users className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-            <p className="text-slate-500 text-lg">No customers yet</p>
-            <p className="text-slate-400 mt-2">Add your first customer to get started</p>
+            <Users className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+            <p className="text-gray-500 text-lg">No customers yet</p>
+            <p className="text-gray-400 mt-2">Add your first customer to get started</p>
           </div>
         </Card>
       ) : (
@@ -143,10 +143,10 @@ export default function Customers() {
             <Card key={customer.id} hover>
               <div className="flex items-start justify-between">
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
                     {customer.name}
                   </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-slate-600">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-600">
                     <div className="flex items-center gap-2">
                       <Mail className="w-4 h-4" />
                       <a
@@ -169,12 +169,12 @@ export default function Customers() {
                     )}
                   </div>
                   {customer.preferences && (
-                    <p className="text-sm text-slate-600 mt-2">
+                    <p className="text-sm text-gray-600 mt-2">
                       <strong>Preferences:</strong> {customer.preferences}
                     </p>
                   )}
                   {customer.notes && (
-                    <p className="text-sm text-slate-500 mt-1 italic">{customer.notes}</p>
+                    <p className="text-sm text-gray-500 mt-1 italic">{customer.notes}</p>
                   )}
                   <p className="text-sm text-green-600 mt-2">
                     ${customer.totalPurchases.toFixed(2)} in total purchases

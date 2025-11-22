@@ -30,7 +30,7 @@ export default function SalesList({ sales, onEdit }: Props) {
   if (sales.length === 0) {
     return (
       <div className="text-center py-8">
-        <p className="text-slate-500">No sales recorded yet</p>
+        <p className="text-gray-500">No sales recorded yet</p>
       </div>
     )
   }
@@ -40,18 +40,18 @@ export default function SalesList({ sales, onEdit }: Props) {
       {sales.map((sale) => (
         <div
           key={sale.id}
-          className="p-4 rounded-xl border border-slate-200 hover:shadow-md transition-all"
+          className="p-4 rounded-xl border border-gray-200 hover:shadow-md transition-all"
         >
           <div className="flex items-start justify-between">
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-2">
-                <h4 className="font-semibold text-slate-900">{sale.productName}</h4>
+                <h4 className="font-semibold text-gray-900">{sale.productName}</h4>
                 <Badge variant="info">
                   Qty: {sale.quantity}
                 </Badge>
                 <span className="text-2xl">{getPaymentIcon(sale.paymentMethod)}</span>
               </div>
-              <div className="flex items-center gap-4 text-sm text-slate-600">
+              <div className="flex items-center gap-4 text-sm text-gray-600">
                 <span className="flex items-center gap-1">
                   <Calendar className="w-4 h-4" />
                   {format(new Date(sale.saleDate), 'MMM d, yyyy')}
@@ -60,7 +60,7 @@ export default function SalesList({ sales, onEdit }: Props) {
                 {sale.fairName && <span>@ {sale.fairName}</span>}
               </div>
               {sale.notes && (
-                <p className="text-sm text-slate-500 mt-2 italic">{sale.notes}</p>
+                <p className="text-sm text-gray-500 mt-2 italic">{sale.notes}</p>
               )}
             </div>
             <div className="flex items-center gap-3 ml-4">
@@ -69,7 +69,7 @@ export default function SalesList({ sales, onEdit }: Props) {
                   ${sale.totalAmount.toFixed(2)}
                 </p>
                 {sale.taxAmount && (
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-gray-500">
                     Tax: ${sale.taxAmount.toFixed(2)}
                   </p>
                 )}

@@ -52,24 +52,24 @@ export default function Finance() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-4xl font-bold text-slate-900 mb-2">
+        <h1 className="text-4xl font-bold text-gray-900 mb-2">
           Finance & Tax Basics 💰
         </h1>
-        <p className="text-lg text-slate-600">
+        <p className="text-lg text-gray-600">
           Track income, expenses, and stay tax-ready
         </p>
       </motion.div>
 
       {/* Monthly Stats */}
       <div>
-        <h2 className="text-sm font-medium text-slate-600 mb-3">
+        <h2 className="text-sm font-medium text-gray-600 mb-3">
           This Month ({format(currentDate, 'MMMM yyyy')})
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Card variant="glass">
             <div className="flex items-center gap-3 mb-2">
               <TrendingUp className="w-5 h-5 text-green-600" />
-              <p className="text-sm text-slate-600">Total Income</p>
+              <p className="text-sm text-gray-600">Total Income</p>
             </div>
             <p className="text-3xl font-bold text-green-600">
               ${monthTotalIncome.toFixed(2)}
@@ -79,7 +79,7 @@ export default function Finance() {
           <Card variant="glass">
             <div className="flex items-center gap-3 mb-2">
               <TrendingDown className="w-5 h-5 text-red-600" />
-              <p className="text-sm text-slate-600">Total Expenses</p>
+              <p className="text-sm text-gray-600">Total Expenses</p>
             </div>
             <p className="text-3xl font-bold text-red-600">
               ${monthExpenses.toFixed(2)}
@@ -89,7 +89,7 @@ export default function Finance() {
           <Card variant="glass">
             <div className="flex items-center gap-3 mb-2">
               <DollarSign className="w-5 h-5 text-blue-600" />
-              <p className="text-sm text-slate-600">Net Profit</p>
+              <p className="text-sm text-gray-600">Net Profit</p>
             </div>
             <p
               className={`text-3xl font-bold ${
@@ -103,7 +103,7 @@ export default function Finance() {
           <Card variant="glass">
             <div className="flex items-center gap-3 mb-2">
               <Calendar className="w-5 h-5 text-purple-600" />
-              <p className="text-sm text-slate-600">Profit Margin</p>
+              <p className="text-sm text-gray-600">Profit Margin</p>
             </div>
             <p className="text-3xl font-bold text-purple-600">
               {monthTotalIncome > 0
@@ -117,26 +117,26 @@ export default function Finance() {
 
       {/* Yearly Stats */}
       <div>
-        <h2 className="text-sm font-medium text-slate-600 mb-3">
+        <h2 className="text-sm font-medium text-gray-600 mb-3">
           Year to Date ({format(currentDate, 'yyyy')})
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Card variant="gradient">
-            <p className="text-sm text-slate-600 mb-1">Total Income</p>
+            <p className="text-sm text-gray-600 mb-1">Total Income</p>
             <p className="text-2xl font-bold text-green-600">
               ${yearTotalIncome.toFixed(2)}
             </p>
           </Card>
 
           <Card variant="gradient">
-            <p className="text-sm text-slate-600 mb-1">Total Expenses</p>
+            <p className="text-sm text-gray-600 mb-1">Total Expenses</p>
             <p className="text-2xl font-bold text-red-600">
               ${yearExpenses.toFixed(2)}
             </p>
           </Card>
 
           <Card variant="gradient">
-            <p className="text-sm text-slate-600 mb-1">Net Profit</p>
+            <p className="text-sm text-gray-600 mb-1">Net Profit</p>
             <p
               className={`text-2xl font-bold ${
                 yearProfit >= 0 ? 'text-green-600' : 'text-red-600'
@@ -147,7 +147,7 @@ export default function Finance() {
           </Card>
 
           <Card variant="gradient">
-            <p className="text-sm text-slate-600 mb-1">Profit Margin</p>
+            <p className="text-sm text-gray-600 mb-1">Profit Margin</p>
             <p className="text-2xl font-bold text-purple-600">
               {yearTotalIncome > 0
                 ? ((yearProfit / yearTotalIncome) * 100).toFixed(1)
@@ -168,10 +168,10 @@ export default function Finance() {
             <Calendar className="w-6 h-6 text-white" />
           </div>
           <div className="flex-1">
-            <h3 className="text-lg font-semibold text-slate-900 mb-2">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
               Quarterly Tax Reminder
             </h3>
-            <p className="text-slate-600 mb-3">
+            <p className="text-gray-600 mb-3">
               Don't forget to set aside funds for quarterly estimated taxes. Consult
               with a tax professional for personalized advice.
             </p>
