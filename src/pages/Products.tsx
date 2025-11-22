@@ -35,55 +35,88 @@ export default function Products() {
   const bestSeller = products?.sort((a, b) => b.quantitySold - a.quantitySold)[0]
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 sm:space-y-8">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
       >
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">
           Product & Inventory Manager 📦
         </h1>
-        <p className="text-lg text-gray-600">
+        <p className="text-base sm:text-lg text-zinc-400">
           Track journals, candles, cards, prints, stickers, and more
         </p>
       </motion.div>
 
       {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card variant="glass">
-          <div className="flex items-center gap-3 mb-2">
-            <Package className="w-5 h-5 text-blue-600" />
-            <p className="text-sm text-gray-600">Total Inventory</p>
-          </div>
-          <p className="text-3xl font-bold text-gray-900">{totalInventory}</p>
-        </Card>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+        >
+          <Card variant="glass" hover>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center">
+                <Package className="w-5 h-5 text-black" />
+              </div>
+              <p className="text-xs sm:text-sm text-zinc-400">Total Inventory</p>
+            </div>
+            <p className="text-2xl sm:text-3xl font-bold text-white">{totalInventory}</p>
+          </Card>
+        </motion.div>
 
-        <Card variant="glass">
-          <div className="flex items-center gap-3 mb-2">
-            <TrendingUp className="w-5 h-5 text-green-600" />
-            <p className="text-sm text-gray-600">Total Revenue</p>
-          </div>
-          <p className="text-3xl font-bold text-green-600">${totalRevenue.toFixed(2)}</p>
-        </Card>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          <Card variant="glass" hover>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center">
+                <TrendingUp className="w-5 h-5 text-black" />
+              </div>
+              <p className="text-xs sm:text-sm text-zinc-400">Total Revenue</p>
+            </div>
+            <p className="text-2xl sm:text-3xl font-bold text-green-400">${totalRevenue.toFixed(2)}</p>
+          </Card>
+        </motion.div>
 
-        <Card variant="glass">
-          <div className="flex items-center gap-3 mb-2">
-            <AlertCircle className="w-5 h-5 text-orange-600" />
-            <p className="text-sm text-gray-600">Low Stock Items</p>
-          </div>
-          <p className="text-3xl font-bold text-orange-600">{lowStockCount}</p>
-        </Card>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+        >
+          <Card variant="glass" hover>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center">
+                <AlertCircle className="w-5 h-5 text-black" />
+              </div>
+              <p className="text-xs sm:text-sm text-zinc-400">Low Stock Items</p>
+            </div>
+            <p className="text-2xl sm:text-3xl font-bold text-orange-400">{lowStockCount}</p>
+          </Card>
+        </motion.div>
 
-        <Card variant="glass">
-          <div className="flex items-center gap-3 mb-2">
-            <TrendingUp className="w-5 h-5 text-purple-600" />
-            <p className="text-sm text-gray-600">Best Seller</p>
-          </div>
-          <p className="text-lg font-semibold text-gray-900 truncate">
-            {bestSeller?.name || 'N/A'}
-          </p>
-        </Card>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+        >
+          <Card variant="glass" hover>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center">
+                <TrendingUp className="w-5 h-5 text-black" />
+              </div>
+              <p className="text-xs sm:text-sm text-zinc-400">Best Seller</p>
+            </div>
+            <p className="text-base sm:text-lg font-semibold text-white truncate">
+              {bestSeller?.name || 'N/A'}
+            </p>
+          </Card>
+        </motion.div>
       </div>
 
       {/* Add Product Button */}

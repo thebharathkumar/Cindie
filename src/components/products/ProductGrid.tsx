@@ -32,9 +32,11 @@ export default function ProductGrid({ products, onEdit }: Props) {
     return (
       <Card variant="gradient">
         <div className="text-center py-16">
-          <Package className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-          <p className="text-gray-500 text-lg">No products yet</p>
-          <p className="text-gray-400 mt-2">Add your first product to get started</p>
+          <div className="w-20 h-20 rounded-3xl bg-white mx-auto mb-6 flex items-center justify-center">
+            <Package className="w-10 h-10 text-black" />
+          </div>
+          <p className="text-zinc-300 text-lg font-medium">No products yet</p>
+          <p className="text-zinc-500 mt-2">Add your first product to get started</p>
         </div>
       </Card>
     )
@@ -53,42 +55,42 @@ export default function ProductGrid({ products, onEdit }: Props) {
               <div className="flex items-center gap-2">
                 <span className="text-3xl">{getTypeIcon(product.type)}</span>
                 <div>
-                  <h3 className="font-semibold text-gray-900">{product.name}</h3>
-                  <p className="text-sm text-gray-500 capitalize">{product.type}</p>
+                  <h3 className="font-semibold text-white">{product.name}</h3>
+                  <p className="text-sm text-zinc-400 capitalize">{product.type}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                 <button
                   onClick={() => onEdit(product.id!)}
-                  className="p-2 rounded-lg hover:bg-blue-50"
+                  className="p-2 rounded-lg hover:bg-zinc-800 transition-colors"
                 >
-                  <Edit className="w-4 h-4 text-blue-600" />
+                  <Edit className="w-4 h-4 text-zinc-400 hover:text-white transition-colors" />
                 </button>
                 <button
                   onClick={() => handleDelete(product.id!)}
-                  className="p-2 rounded-lg hover:bg-red-50"
+                  className="p-2 rounded-lg hover:bg-zinc-800 transition-colors"
                 >
-                  <Trash2 className="w-4 h-4 text-red-600" />
+                  <Trash2 className="w-4 h-4 text-red-400 hover:text-red-300 transition-colors" />
                 </button>
               </div>
             </div>
 
             <div className="space-y-2 mb-4">
               <div className="flex items-center justify-between text-sm">
-                <span className="text-gray-600">Price:</span>
-                <span className="font-semibold text-gray-900">
+                <span className="text-zinc-400">Price:</span>
+                <span className="font-semibold text-white">
                   ${product.retailPrice.toFixed(2)}
                 </span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-gray-600">In Stock:</span>
-                <span className={`font-semibold ${isLowStock ? 'text-orange-600' : 'text-gray-900'}`}>
+                <span className="text-zinc-400">In Stock:</span>
+                <span className={`font-semibold ${isLowStock ? 'text-orange-400' : 'text-white'}`}>
                   {remaining}
                 </span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-gray-600">Sold:</span>
-                <span className="font-semibold text-green-600">{product.quantitySold}</span>
+                <span className="text-zinc-400">Sold:</span>
+                <span className="font-semibold text-green-400">{product.quantitySold}</span>
               </div>
             </div>
 
@@ -104,10 +106,10 @@ export default function ProductGrid({ products, onEdit }: Props) {
             </div>
 
             {/* Revenue */}
-            <div className="mt-4 pt-4 border-t border-gray-200">
+            <div className="mt-4 pt-4 border-t border-zinc-800">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Total Revenue:</span>
-                <span className="font-semibold text-green-600">
+                <span className="text-sm text-zinc-400">Total Revenue:</span>
+                <span className="font-semibold text-green-400">
                   ${(product.retailPrice * product.quantitySold).toFixed(2)}
                 </span>
               </div>
