@@ -9,9 +9,9 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ className = '', variant = 'default', hover = false, children, ...props }, ref) => {
     const variants = {
-      default: 'bg-white border border-gray-200 shadow-sm',
-      glass: 'glass shadow-sm',
-      gradient: 'bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 shadow-sm',
+      default: 'bg-white border border-gray-200 shadow-sm shadow-smooth',
+      glass: 'glass shadow-sm shadow-smooth',
+      gradient: 'bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 shadow-sm shadow-smooth',
     }
 
     if (hover) {
@@ -19,9 +19,12 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       return (
         <MotionDiv
           ref={ref}
-          className={`rounded-2xl p-6 ${variants[variant]} ${className}`}
-          whileHover={{ y: -2, boxShadow: '0 4px 12px 0 rgba(0, 0, 0, 0.1)' }}
-          transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+          className={`rounded-2xl p-6 transition-all ${variants[variant]} ${className}`}
+          whileHover={{
+            y: -4,
+            boxShadow: '0 8px 24px 0 rgba(0, 0, 0, 0.12)'
+          }}
+          transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
           {...(props as any)}
         >
           {children}

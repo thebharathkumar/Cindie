@@ -24,18 +24,18 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed'
+      'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-300 ease-out focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed shadow-smooth'
 
     const variants = {
       primary:
-        'bg-primary text-white hover:bg-primary-light active:bg-primary-dark shadow-sm',
+        'bg-primary text-white hover:bg-primary-light hover:shadow-md active:bg-primary-dark',
       secondary:
-        'bg-gray-800 text-white hover:bg-gray-700 active:bg-gray-900 shadow-sm',
+        'bg-gray-800 text-white hover:bg-gray-700 hover:shadow-md active:bg-gray-900',
       outline:
-        'border-2 border-primary text-primary hover:bg-primary hover:text-white',
+        'border-2 border-primary text-primary hover:bg-primary hover:text-white hover:shadow-sm',
       ghost: 'text-gray-700 hover:bg-gray-100',
       danger:
-        'bg-red-600 text-white hover:bg-red-700 active:bg-red-800 shadow-sm',
+        'bg-red-600 text-white hover:bg-red-700 hover:shadow-md active:bg-red-800',
     }
 
     const sizes = {
@@ -49,8 +49,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <MotionButton
         ref={ref}
-        whileHover={{ scale: 1.01 }}
-        whileTap={{ scale: 0.99 }}
+        whileHover={{ scale: 1.02, y: -1 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
         className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
         disabled={disabled || loading}
         {...(props as any)}
