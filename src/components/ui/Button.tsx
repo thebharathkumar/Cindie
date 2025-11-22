@@ -24,24 +24,24 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-300 ease-out focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed shadow-smooth'
+      'inline-flex items-center justify-center gap-2 font-medium transition-all duration-200 ease-out focus:outline-none disabled:opacity-40 disabled:cursor-not-allowed uppercase tracking-wider text-sm'
 
     const variants = {
       primary:
-        'bg-white text-black hover:bg-zinc-100 hover:shadow-lg hover:shadow-black/50 active:bg-zinc-200',
+        'bg-[#FF0000] text-white hover:bg-[#CC0000] active:bg-[#990000] px-8 py-3',
       secondary:
-        'bg-zinc-900 text-white border border-zinc-700 hover:bg-zinc-800 hover:shadow-md hover:shadow-black/50 active:bg-zinc-950',
+        'bg-white text-black border-2 border-black hover:bg-black hover:text-white active:bg-gray-900 px-8 py-3',
       outline:
-        'border-2 border-zinc-700 text-zinc-300 hover:bg-zinc-900 hover:text-white hover:shadow-sm',
-      ghost: 'text-zinc-400 hover:bg-zinc-900 hover:text-white',
+        'border-2 border-white text-white hover:bg-white hover:text-black active:bg-gray-100 px-8 py-3',
+      ghost: 'text-white hover:text-[#FF0000] px-4 py-2',
       danger:
-        'bg-red-600 text-white hover:bg-red-700 hover:shadow-md hover:shadow-black/50 active:bg-red-800',
+        'bg-black text-[#FF0000] border-2 border-[#FF0000] hover:bg-[#FF0000] hover:text-white active:bg-[#CC0000] px-8 py-3',
     }
 
     const sizes = {
-      sm: 'text-sm px-4 py-2',
-      md: 'text-base px-5 py-2.5',
-      lg: 'text-lg px-7 py-3',
+      sm: 'text-xs px-6 py-2',
+      md: 'text-sm px-8 py-3',
+      lg: 'text-base px-10 py-4',
     }
 
     const MotionButton = motion.button

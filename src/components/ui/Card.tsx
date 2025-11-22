@@ -9,9 +9,9 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ className = '', variant = 'default', hover = false, children, ...props }, ref) => {
     const variants = {
-      default: 'bg-zinc-950 border border-zinc-800 shadow-sm shadow-black/50',
-      glass: 'bg-zinc-950/80 backdrop-blur-xl border border-zinc-800 shadow-sm shadow-black/50',
-      gradient: 'bg-gradient-to-br from-zinc-900 to-zinc-950 border border-zinc-800 shadow-sm shadow-black/50',
+      default: 'bg-black border-2 border-white/10',
+      glass: 'bg-black/50 border-2 border-white/20',
+      gradient: 'bg-black border-2 border-[#FF0000]/30',
     }
 
     if (hover) {
@@ -19,13 +19,12 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       return (
         <MotionDiv
           ref={ref}
-          className={`rounded-2xl p-6 transition-all ${variants[variant]} ${className}`}
+          className={`p-6 sm:p-8 transition-all ${variants[variant]} ${className}`}
           whileHover={{
-            y: -4,
-            boxShadow: '0 8px 24px 0 rgba(0, 0, 0, 0.8)',
+            borderColor: 'rgba(255, 0, 0, 0.6)',
             scale: 1.01
           }}
-          transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
           {...(props as any)}
         >
           {children}
@@ -36,7 +35,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     return (
       <div
         ref={ref}
-        className={`rounded-2xl p-6 ${variants[variant]} ${className}`}
+        className={`p-6 sm:p-8 ${variants[variant]} ${className}`}
         {...props}
       >
         {children}

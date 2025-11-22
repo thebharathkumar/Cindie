@@ -8,13 +8,11 @@
   }
 
   body {
-    @apply bg-white text-gray-800 antialiased;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif;
+    @apply bg-black text-white antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Arial', sans-serif;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: -0.01em;
-    font-feature-settings: 'kern' 1;
     text-rendering: optimizeLegibility;
   }
 
@@ -22,22 +20,24 @@
     scroll-behavior: smooth;
   }
 
-  /* Apple-style typography refinements */
+  /* Nothing-style typography - bold and impactful */
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    text-transform: uppercase;
   }
 
   p {
-    letter-spacing: -0.01em;
-    line-height: 1.5;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+    font-weight: 400;
   }
 
-  /* Apple-style scrollbar */
+  /* Nothing-style scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 4px;
+    height: 4px;
   }
 
   ::-webkit-scrollbar-track {
@@ -45,12 +45,23 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-gray-300 rounded-full;
+    @apply bg-white/20;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gray-400;
+    @apply bg-[#FF0000];
   }
+}
+
+/* Dot matrix pattern */
+.dot-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.dot-pattern-red {
+  background-image: radial-gradient(rgba(255, 0, 0, 0.15) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 @layer components {
