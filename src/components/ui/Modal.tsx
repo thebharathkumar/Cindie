@@ -48,7 +48,7 @@ export default function Modal({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40"
           />
 
           {/* Modal */}
@@ -61,15 +61,15 @@ export default function Modal({
                 duration: 0.4,
                 ease: [0.4, 0, 0.2, 1]
               }}
-              className={`glass rounded-3xl shadow-2xl w-full ${sizes[size]} max-h-[90vh] flex flex-col overflow-hidden`}
+              className={`bg-zinc-950 border border-zinc-800 rounded-3xl shadow-2xl shadow-black/80 w-full ${sizes[size]} max-h-[90vh] flex flex-col overflow-hidden`}
             >
               {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-white/50">
+              <div className="flex items-center justify-between p-6 border-b border-zinc-800">
                 <motion.h2
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1, duration: 0.3 }}
-                  className="text-2xl font-semibold text-gray-900"
+                  className="text-2xl font-semibold text-white"
                 >
                   {title}
                 </motion.h2>
@@ -77,9 +77,9 @@ export default function Modal({
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={onClose}
-                  className="p-2 rounded-xl hover:bg-gray-100 transition-colors"
+                  className="p-2 rounded-xl hover:bg-zinc-900 transition-colors"
                 >
-                  <X className="w-5 h-5 text-gray-500" />
+                  <X className="w-5 h-5 text-zinc-400" />
                 </motion.button>
               </div>
 
@@ -99,7 +99,7 @@ export default function Modal({
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.3 }}
-                  className="flex items-center justify-end gap-3 p-6 border-t border-gray-200 bg-white/50"
+                  className="flex items-center justify-end gap-3 p-6 border-t border-zinc-800"
                 >
                   {footer}
                 </motion.div>

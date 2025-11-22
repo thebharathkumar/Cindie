@@ -28,7 +28,7 @@ export default function Layout() {
   const location = useLocation()
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       <Sidebar />
       <motion.main
         animate={{

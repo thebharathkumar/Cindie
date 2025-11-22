@@ -10,26 +10,26 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <div className="w-full">
         {label && (
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-zinc-400 mb-2">
             {label}
           </label>
         )}
         <textarea
           ref={ref}
           className={`
-            w-full rounded-xl border border-gray-300 bg-white px-4 py-3
-            text-gray-800 placeholder:text-gray-400
-            focus:border-primary focus:ring-2 focus:ring-primary/10 focus:outline-none
+            w-full rounded-xl border border-zinc-800 bg-black px-4 py-3
+            text-white placeholder:text-zinc-700
+            focus:border-zinc-600 focus:ring-2 focus:ring-zinc-800 focus:outline-none
             transition-all duration-300 ease-out shadow-smooth
-            hover:border-gray-400
-            disabled:bg-gray-100 disabled:cursor-not-allowed disabled:hover:border-gray-300
+            hover:border-zinc-700
+            disabled:bg-zinc-900 disabled:cursor-not-allowed disabled:hover:border-zinc-800
             resize-none
-            ${error ? 'border-red-500 focus:border-red-500 focus:ring-red-500/10' : ''}
+            ${error ? 'border-red-900 focus:border-red-800 focus:ring-red-900/10' : ''}
             ${className}
           `}
           {...props}
         />
-        {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+        {error && <p className="mt-1 text-sm text-red-400">{error}</p>}
       </div>
     )
   }
